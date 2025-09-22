@@ -1,20 +1,26 @@
 function runProgram(input) {
     input = input.trim().split("\n");
-    let t = parseInt(input[0]); // number of test cases
+    let t = +input[0]; // number of test cases
     let line = 1;
 
     for (let i = 0; i < t; i++) {
-        let str = input[line++].trim();  // comma separated string
-        if (str.length === 0) {
-            console.log([]); // agar empty string ho
+        let str = input[line++].trim();
+
+        // agar empty string di ho to empty print
+        if (str === "") {
+            console.log("");
             continue;
         }
-        let arr = str.split(",").map(Number); // string → number array
+
+        // split by comma and convert to integers
+        let arr = str.split(",").map(Number);
+
+        // output format: space separated
         console.log(arr.join(" "));
     }
 }
 
-// Boilerplate code for online judge
+// Boilerplate (for online judge)
 if (process.env.USERNAME === "YOUR_NAME") {
     runProgram(`2
 1,2,3,4,5
