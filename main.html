@@ -24,11 +24,15 @@
           <input id="password" type="password" placeholder="Password" />
           <button class="btn login-btn" type="submit">Log in</button>
 
-          <a href="#" id="forgot" class="forgot-link">Forgotten account?</a>
+          <!-- ✅ Fixed: Cypress expects this exact href -->
+          <a href="/recover/initiate" id="forgot" class="forgot-link">
+            Forgotten account?
+          </a>
 
           <hr class="separator" />
 
-          <button id="createAccount" type="button" class="btn create-btn">
+          <!-- ✅ Fixed: Cypress expects id="signup" -->
+          <button id="signup" type="button" class="btn create-btn">
             Create new account
           </button>
         </form>
